@@ -1,0 +1,144 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #aed6f1 ;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Estilo del contenedor principal */
+  #app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #d6eaf8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  /* Navegación */
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: #0078d4;
+    padding: 10px 0;
+    border-radius: 10px 10px 0 0;
+    flex-wrap: nowrap;
+  }
+  
+  nav a {
+    color: rgb(6, 235, 247);
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  nav a:hover {
+    background-color: #0056a1;
+  }
+  
+  /* Secciones */
+  section {
+    padding: 20px;
+    background-color: rgb(64, 216, 243);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+  }
+  
+  /* Estilo de las imágenes */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+  }
+  
+  .gallery img {
+    width: calc(33.33% - 10px); /* 3 imágenes por fila */
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .gallery img {
+      width: calc(50% - 10px); /* 2 imágenes por fila en móvil */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery img {
+      width: 100%; /* 1 imagen por fila en pantallas muy pequeñas */
+    }
+  }
+  @media (max-width:768px){
+    /* Keep nav horizontal on small screens and allow horizontal scrolling
+       so buttons stay side-by-side instead of stacking vertically */
+    nav{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: nowrap; 
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 8px 6px;
+    }
+    nav::-webkit-scrollbar { display: none; }
+    nav { scrollbar-width: none; }
+
+    nav a{
+      flex: 0 0 auto;
+      width: auto;
+      text-align: center;
+      padding: 8px 12px;
+      margin: 0 6px;
+    }
+
+    .contenido{
+      padding: 10px;
+    }
+    .imagenes-container{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .imagenes-container img{
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+    }
+  }
+
+  /* Small screens: make nav buttons smaller so they fit and don't get cut off */
+  @media (max-width:480px) {
+    nav {
+      gap: 6px;
+      padding: 6px 6px;
+    }
+
+    /* Apply to both anchor-based and button-based nav items */
+    nav a,
+    nav button {
+      flex: 0 0 auto;
+      /* allow buttons to shrink further on very small screens */
+      min-width: 36px;
+      padding: 4px 6px;
+      font-size: 12px;
+      /* Allow text to wrap to a second line instead of truncating */
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip;
+    }
+
+    /* If you prefer slightly larger tappable areas, increase min-width/padding */
+  }
